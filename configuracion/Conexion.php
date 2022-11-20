@@ -27,4 +27,17 @@ function ejecutarConsultaUnica($sql){
     return $row;
 }
 
+function ejecutarConsulta_retornarID($sql){
+
+    global $conexion;
+    $query =$conexion->query($sql);
+    return $conexion->insert_id;
+}
+
+function limpiarCadena($sql){
+
+    global $conexion;
+    $str = mysqli_real_escape_string($conexion, trim($str));
+    return htmlspecialchars($str);
+}
 ?>
